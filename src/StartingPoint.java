@@ -21,15 +21,15 @@ public class StartingPoint {
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mestrado","root","admin");
+//            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mestrado","root","admin");
 
-            Statement statement = connection.createStatement();
+//            Statement statement = connection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("select * from codigo");
+//            ResultSet resultSet = statement.executeQuery("select * from codigo");
 
-            while (resultSet.next()){
-                System.out.println(resultSet.getString(""));
-            }
+//            while (resultSet.next()){
+//                System.out.println(resultSet.getString(""));
+//            }
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -52,8 +52,14 @@ public class StartingPoint {
                         Gson gson = new Gson();
                         Json json1 = gson.fromJson(json[0], Json.class);
 
-                        System.out.println(json1.getLeftSideLocations(0).getStartLine());
-                        System.out.println(json1.getLeftSideLocations(0).getEndLine());
+                        for (int j = 0; j < json1.getLeftSideLocationsLength(); j++) {
+                            System.out.println(json1.getLeftSideLocations(j).getStartLine());
+                            System.out.println(json1.getLeftSideLocations(j).getEndLine());
+                        }
+
+
+
+                        System.out.println(json1.getI());
                     }
                 }
             }

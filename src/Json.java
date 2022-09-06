@@ -10,6 +10,15 @@ public class Json {
         return i;
     }
 
+
+    public int getLeftSideLocationsLength() {
+        return leftSideLocations.length;
+    }
+
+    public int getRightSideLocationsLength() {
+        return rightSideLocations.length;
+    }
+
     public String getType(){
         return type;
     }
